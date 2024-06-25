@@ -1,0 +1,262 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+[x-cloak][data-type=dataTable5] {
+  display: none !important;
+}
+
+[x-cloak][data-type=category-btn] {
+  display: none !important;
+}
+
+.dataTable5 {
+  transition: 0.3s;
+  padding: 10px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.dataTable5::-webkit-scrollbar {
+  width: 3px;
+  height: 10px;
+  border-radius: 6px;
+}
+.dataTable5::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.dataTable5::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.dataTable5::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.dataTable5 .toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.dataTable5 .toolbar .search, .dataTable5 .toolbar .limit {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.dataTable5 .toolbar .search input[type=text], .dataTable5 .toolbar .search input[type=date], .dataTable5 .toolbar .search select, .dataTable5 .toolbar .search input[type=number], .dataTable5 .toolbar .limit input[type=text], .dataTable5 .toolbar .limit input[type=date], .dataTable5 .toolbar .limit select, .dataTable5 .toolbar .limit input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin-right: 8px;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  box-sizing: border-box;
+  height: 44px;
+}
+.dataTable5 .toolbar .search .line, .dataTable5 .toolbar .limit .line {
+  width: 20px;
+  height: 2px;
+  background-color: #000;
+  display: block;
+  margin-top: 7px;
+  margin-right: 8px;
+}
+.dataTable5 .toolbar .search > button, .dataTable5 .toolbar .limit > button {
+  width: 50.64px;
+  height: 45.64px;
+  margin-left: 5px;
+  background-color: #337AB7;
+  color: #777;
+}
+.dataTable5 .toolbar .categories button {
+  outline: none;
+  transition: 0.3s;
+  background-color: #337AB7;
+  border: none;
+  margin: 0 2px;
+}
+.dataTable5 .toolbar .categories button.non-select {
+  background-color: #aaa;
+  color: #fff;
+  box-shadow: none;
+}
+.dataTable5 .dataTable {
+  box-shadow: 0 3px 6px #ddd;
+  table-layout: fixed;
+  width: 100%;
+}
+.dataTable5 .dataTable > thead tr {
+  background-color: #fff;
+  color: #111;
+}
+.dataTable5 .dataTable > thead tr th {
+  cursor: pointer;
+  padding: 15px 10px;
+  border: 1px #ddd solid;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.dataTable5 .dataTable > thead tr th.sort {
+  background-color: rgba(238, 238, 238, 0.35);
+}
+.dataTable5 .dataTable > thead tr th > i {
+  font-size: 12px;
+  margin-left: 5px;
+  transition: 0.3s;
+  animation: show 0.3s linear;
+  transform: scale(1) rotate(0deg);
+}
+.dataTable5 .dataTable > thead tr th > i.sort {
+  transform: scale(1) rotate(540deg);
+}
+@keyframes show {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+.dataTable5 .dataTable > tbody.notfound tr {
+  background-color: rgb(250, 250, 250);
+}
+.dataTable5 .dataTable > tbody.notfound td {
+  text-align: center;
+  padding: 50px 0;
+  color: #777;
+  font-size: 14px;
+  border: 1px #ddd solid;
+}
+.dataTable5 .dataTable > tbody tr:nth-child(even) {
+  background-color: #F2F2F2;
+}
+.dataTable5 .dataTable > tbody tr td {
+  padding: 15px 7px;
+  border: 1px rgb(230, 230, 230) solid;
+  word-break: break-all;
+}
+.dataTable5 .dataTable > tbody tr td.nowrap {
+  white-space: nowrap;
+}
+.dataTable5 .dataTable > tbody tr td.non-data {
+  text-align: center;
+  font-size: 14px;
+  padding: 50px 0;
+  color: #D9534F;
+}
+.dataTable5 .pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.dataTable5 .pagination small {
+  color: #111;
+  font-size: 13px;
+}
+.dataTable5 .pagination .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dataTable5 .pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.dataTable5 .pagination a.active {
+  background-color: #337AB7;
+  color: #fff;
+}
+.dataTable5 .pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+.dataTable5 .pagination a.disabled {
+  cursor: not-allowed;
+}
+.dataTable5 .pagination a.disabled:hover:not(.active) {
+  background-color: transparent;
+}
+.dataTable5 .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+}
+.dataTable5 .loading .loader {
+  border: 5px solid #ddd !important;
+  border-top: 5px solid #666 !important;
+  border-radius: 50% !important;
+  width: 30px !important;
+  height: 30px !important;
+  animation: spin 2s linear infinite !important;
+  display: block;
+}
+.dataTable5 .chart-data {
+  display: grid;
+  grid-template-columns: repeat(4, calc(25% - 2em));
+  grid-column-gap: 2em;
+  grid-row-gap: 1em;
+  width: 100%;
+  justify-content: center;
+  margin: 50px 0;
+}
+.dataTable5 .chart-data > .column {
+  padding: 15px;
+  box-shadow: 0 3px 6px #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.dataTable5 .chart-data > .column h5 {
+  font-weight: 600;
+  font-size: 17px;
+}
+.dataTable5 .chart-data > .column p {
+  font-size: 30px;
+}
+.dataTable5 .chart-data > .column .visits-col {
+  display: flex;
+  align-items: center;
+}
+.dataTable5 .copyright {
+  opacity: 0.5;
+  color: #f00;
+  text-align: center;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+.topBtn {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #337AB7;
+  color: #777;
+  z-index: 9999;
+  cursor: pointer;
+}
+.topBtn:hover {
+  text-decoration: none;
+  color: #777;
+}/*# sourceMappingURL=style.css.map */
