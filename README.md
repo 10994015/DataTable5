@@ -1,5 +1,6 @@
 # DataTable 5
 
+## 這是原生PHP + Alpine.js 的Data Table 套件
 #### 引入css、js
 
 > 假設我將dataTable5 的資料夾放在contract-manage/ 底下 
